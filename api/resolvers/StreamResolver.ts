@@ -14,8 +14,8 @@ import { ObjectIdScalar } from '../schema/object-id.scalar'
 import { StreamInput } from '../types/StreamInput'
 import { isAuth } from '../middlewares/isAuth'
 
-import { Stream, StreamModel } from 'models/Stream'
-import { User, UserModel } from 'models/User'
+import { Stream, StreamModel } from '../models/Stream'
+import { User, UserModel } from '../models/User'
 
 @Resolver(() => Stream)
 export class StreamResolver {

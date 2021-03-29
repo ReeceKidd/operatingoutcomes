@@ -21,7 +21,6 @@ export class AuthResolver {
 
     // 2. create a new user with a hashed password
     const hashedPassword = await bcrypt.hash(password, 10)
-    console.log('Hashed password', hashedPassword)
 
     const user = new UserModel({ email, password: hashedPassword })
     await user.save()
