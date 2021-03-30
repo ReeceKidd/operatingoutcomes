@@ -29,7 +29,7 @@ async function createServer() {
 
     const apolloServer = new ApolloServer({
       schema,
-      context: ({ req, res }) => ({ req, res }),
+      context: ({ req, res }) => ({ request: req, response: res }),
       introspection: true,
       playground: {
         settings: {

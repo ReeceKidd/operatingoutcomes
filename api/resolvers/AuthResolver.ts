@@ -5,6 +5,7 @@ import bcrypt from 'bcryptjs'
 import { UserModel } from '../models/User'
 import { AuthInput } from '../types/AuthInput'
 import { UserResponse } from '../types/UserResponse'
+import { APP_SECRET } from '../middlewares/isAuth'
 
 @Resolver()
 export class AuthResolver {
@@ -30,7 +31,7 @@ export class AuthResolver {
       id: user.id,
     }
 
-    const token = jwt.sign(payload, process.env.SESSION_SECRET || 'aslkjfh')
+    const token = jwt.sign(payload, APP_SECRET)
 
     return { user, token }
   }
